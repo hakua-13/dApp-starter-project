@@ -149,7 +149,7 @@ export const App = () =>  {
         console.log('Minting -> ', waveTxn.hash);
         // input areを空にする
         setMessageValue('');
-        
+
         await waveTxn.wait();
         console.log('Mined -> ', waveTxn.hash);
 
@@ -157,7 +157,7 @@ export const App = () =>  {
         console.log('Retrieved total wave count....', count.toNumber());
 
         let contractBalance_port = await provider.getBalance(wavePortalContract.address);
-        // contractの残高が減っていることを確認する
+        // コントラクトの残高が減っていることを確認する
         if(contractBalance_port.lt((contractBalance))){
           console.log('User won ETH !!');
         }else{
